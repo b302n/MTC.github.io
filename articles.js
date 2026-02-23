@@ -2,20 +2,6 @@
 
 // Dati dei membri (storie dettagliate)
 const membersData = {
-  mara: {
-    name: 'Mara J.',
-    role: 'vocals, guitar',
-    bio: `<p>Mara ha fondato la band nel 2014 dopo anni di esperienze soliste in caffè deserti. La sua voce eterea e i testi malinconici sono il cuore emotivo di Velvet Echoes. Influenzata da Mazzy Star e Slowdive, scrive canzoni che parlano di notti insonni e luci al neon.</p>
-          <p>Oltre alla musica, è appassionata di fotografia in bianco e nero e cura l'immagine visiva della band.</p>`,
-    avatarId: 'avatar1'  // riferimento all'ID nell'HTML
-  },
-  sol: {
-    name: 'Sol R.',
-    role: 'bass, synth',
-    bio: `<p>Sol è il motore ritmico e la mente sperimentale. Cresciuto ascoltando krautrock e post-punk, ha trasformato il basso in una texture liquida. I suoi synth analogici aggiungono strati di calore distorsione.</p>
-          <p>Prima di unirsi alla band, costruiva pedali effetti nel suo garage. È anche un abile sound engineer e produce i dischi del gruppo.</p>`,
-    avatarId: 'avatar2'
-  },
   eliot: {
     name: 'Eliot W.',
     role: 'guitar, noises',
@@ -92,3 +78,4 @@ document.addEventListener('keydown', (e) => {
 });
 
 console.log('📖 articles.js caricato - popup interattivo pronto');
+
