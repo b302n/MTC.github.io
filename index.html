@@ -1150,24 +1150,22 @@ body.bg-fallback {
         Contacts
       </h2>
       
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fa-solid fa-phone"></i>
-          <span href="tel:+39 6543567654345">+39 305 394 30430</span>
-        </div>
-        
-        <div class="contact-item">
-          <i class="fa-regular fa-envelope"></i>
-          <span href="mailto:marco.tencaticorino@gmail.com">marco.tencaticorino@gmail.com</span>
-        </div>
-        
-        
-        <div class="contact-item">
-          <i class="fa-brands fa-youtube"></i>
-          <span href="https://www.youtube.com/@MarcoTencatiCorinoGuitar">/marcotencati</span>
-        </div>
-      </div>
-    </div>
+<div class="contact-info">
+  <div class="contact-item" onclick="window.location.href='tel:+3930539430430'" style="cursor: pointer;">
+    <i class="fa-solid fa-phone"></i>
+    <span>+39 305 394 30430</span>
+  </div>
+  
+  <div class="contact-item" onclick="window.location.href='mailto:marco.tencaticorino@gmail.com'" style="cursor: pointer;">
+    <i class="fa-regular fa-envelope"></i>
+    <span>marco.tencaticorino@gmail.com</span>
+  </div>
+  
+  <div class="contact-item" onclick="window.open('https://www.youtube.com/@MarcoTencatiCorinoGuitar', '_blank')" style="cursor: pointer;">
+    <i class="fa-brands fa-youtube"></i>
+    <span>/marcotencati</span>
+  </div>
+</div>
     
     <!-- Card Booking (75%) -->
     <div class="booking-card">
@@ -1462,15 +1460,16 @@ bookingForm.addEventListener('submit', function(e) {
   const date = dateInput.value;
   const notes = notesInput.value.trim();
 
-  const templateParams = {
-    name: name,
-    surname: surname,
-    email: email,
-    phone: phone,
-    date: date,
-    notes: notes
-  };
-
+const templateParams = {
+  name: name,
+  surname: surname,
+  email: email,
+  phone: phone,
+  date: date,
+  event_type: document.getElementById('event-type').value,
+  notes: notes
+};
+  
   emailjs.send(
     "YOUR_SERVICE_ID",   // ← service ID
     "YOUR_TEMPLATE_ID",  // ← template ID
