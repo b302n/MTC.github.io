@@ -605,19 +605,12 @@ clip-path: inset(0 round 3rem);
 }
 
     /* Assicura che TUTTI gli elementi di sfondo stiano sotto */
-.bg-image,
-.bg-gradient,
-body::after,
-.bg-blob {
-  z-index: -1;                     /* <-- MODIFICA: tutti a -1 */
+.bg-image
+    {
+  z-index: 1;                     /* <-- MODIFICA: tutti a -1 */
   /* Mantieni le altre proprietà invariate */
 }
 
-/* Se vuoi mantenere una gerarchia, lascia .bg-image a -3, ma il contenuto a 1 */
-.bg-image { z-index: -3; }         /* OK, resta sotto */
-.bg-gradient { z-index: -2; }       /* OK */
-body::after, .bg-blob { z-index: -1; } /* OK, ma sopra il gradiente */
-    /* Stato iniziale neutro */
 
 
 /* Quando l'immagine è valida */
