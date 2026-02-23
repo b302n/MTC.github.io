@@ -805,7 +805,289 @@ body.bg-fallback {
   border-color: rgba(200, 90, 90, 0.8) !important;
   box-shadow: 0 0 0 3px rgba(200, 90, 90, 0.25) !important;
 }
+/* Split layout per Contacts & Booking */
+.split-layout {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  min-height: 500px;
+}
 
+/* Card Contatti - 25% */
+.contact-card {
+  flex: 1;
+  width: 25%;
+  background: rgba(10, 10, 14, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 2rem;
+  padding: 1.8rem 1.5rem;
+  border: 1px solid rgba(230, 230, 250, 0.08);
+  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.8);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card:hover {
+  border-color: rgba(230, 230, 250, 0.15);
+  box-shadow: 0 30px 40px -15px #000000dd;
+}
+
+.contact-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #f0f0fa;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid rgba(230, 230, 250, 0.15);
+  padding-bottom: 1rem;
+}
+
+.contact-title i {
+  color: #a0a8d0;
+  font-size: 1.8rem;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 1rem;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.contact-item:hover {
+  background: rgba(30, 30, 40, 0.5);
+  border-color: rgba(160, 168, 208, 0.3);
+  transform: translateX(5px);
+}
+
+.contact-item i {
+  width: 24px;
+  color: #a0a8d0;
+  font-size: 1.2rem;
+}
+
+.contact-item span {
+  color: #dddde6;
+  font-weight: 300;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.contact-note {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(230, 230, 250, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #b0b0c0;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.contact-note i {
+  color: #a0a8d0;
+}
+
+/* Card Booking - 75% */
+.booking-card {
+  flex: 3;
+  width: 75%;
+  background: rgba(10, 10, 14, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 2rem;
+  padding: 1.8rem 2rem;
+  border: 1px solid rgba(230, 230, 250, 0.08);
+  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.8);
+  transition: all 0.3s ease;
+}
+
+.booking-card:hover {
+  border-color: rgba(230, 230, 250, 0.15);
+  box-shadow: 0 30px 40px -15px #000000dd;
+}
+
+.booking-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #f0f0fa;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid rgba(230, 230, 250, 0.15);
+  padding-bottom: 1rem;
+}
+
+.booking-title i {
+  color: #a0a8d0;
+  font-size: 2rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.booking-form .form-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.booking-form .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 300;
+  color: #b0b0c0;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.booking-form input,
+.booking-form textarea,
+.booking-form select {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(230, 230, 250, 0.15);
+  border-radius: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #f0f0fa;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.booking-form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a0a8d0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+.booking-form select option {
+  background: #1a1a24;
+  color: #f0f0fa;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus,
+.booking-form select:focus {
+  outline: none;
+  border-color: #a0a8d0;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(160, 168, 208, 0.2);
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: rgba(200, 200, 220, 0.3);
+  font-weight: 300;
+}
+
+.booking-form .form-footer {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.booking-form .submit-btn {
+  background: rgba(160, 168, 208, 0.15);
+  border: 1px solid rgba(160, 168, 208, 0.3);
+  color: #f0f0fa;
+  padding: 0.9rem 2.2rem;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s;
+  backdrop-filter: blur(6px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.booking-form .submit-btn:hover:not(:disabled) {
+  background: rgba(160, 168, 208, 0.3);
+  border-color: #a0a8d0;
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px -8px #00000080;
+}
+
+.booking-form .submit-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Stili validazione */
+.booking-form input.is-valid {
+  border-color: rgba(80, 150, 80, 0.6);
+}
+
+.booking-form input.is-invalid {
+  border-color: rgba(200, 90, 90, 0.6);
+}
+
+.booking-note {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: #b0b0c0;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .split-layout {
+    flex-direction: column;
+  }
+  
+  .contact-card,
+  .booking-card {
+    width: 100%;
+  }
+  
+  .contact-card {
+    min-height: auto;
+  }
+  
+  .booking-form .form-row {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .booking-title {
+    font-size: 1.5rem;
+  }
+  
+  .contact-title {
+    font-size: 1.4rem;
+  }
+}
 /* Data di default mantiene lo stile base finché non interagita */
     
   </style>
@@ -858,57 +1140,119 @@ body.bg-fallback {
       </section>
 
       <!-- Discografia -->
-      <section class="page" id="contacts">
-  <div class="booking">
-  <!-- MODALE PRENOTAZIONE -->
-<div class="story-card" id="bookingModal">
-    <h2 style="font-size: 2rem; margin-bottom: 1rem; text-align: center;">Book me for events</h2>
-    <form id="bookingForm">
-      <div class="form-group">
-        <label for="name">First name *</label>
-        <input type="text" id="name" name="name" required placeholder="First name">
-      </div>
-      <div class="form-group">
-        <label for="surname">Last name</label>
-        <input type="text" id="surname" name="surname" placeholder="Last name (optional)">
-      </div>
-      <div class="form-row">
-        <div class="form-group half">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your email">
-        </div>
-        <div class="form-group half">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Your phone">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="date">Event date *</label>
-        <input type="date" id="date" name="date" required>
-      </div>
-      <div class="form-group">
-        <label for="notes">Special Requests</label>
-        <textarea id="notes" name="notes" rows="3" placeholder="Write something..."></textarea>
-      </div>
-      <div class="form-footer">
-        <button type="submit" class="submit-btn">Send booking request! <i class="fa-regular fa-paper-plane"></i></button>
-      </div>
-    </form>
- </div>
-</div>
-
+    <!-- Contacts & Book me for events -->
+<section class="page" id="contacts">
+  <div class="split-layout">
+    <!-- Card Contatti (25%) -->
+    <div class="contact-card">
+      <h2 class="contact-title">
+        <i class="fa-regular fa-address-card"></i>
+        Contacts
+      </h2>
       
-                <h1>Contacts</h1>
-                <div class="story-card">
-                  30539430430
-                  <p></p>
-                  mailmail@gmail.com
-                  <p></p>
-
-                </div>
-
-        <div class="band-footer"><i class="fa-regular fa-star"></i> — Contacts & booking —</div>
-      </section>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+39 305 394 30430</span>
+        </div>
+        
+        <div class="contact-item">
+          <i class="fa-regular fa-envelope"></i>
+          <span>mailmail@gmail.com</span>
+        </div>
+        
+        <div class="contact-item">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@marcotencaticorino</span>
+        </div>
+        
+        <div class="contact-item">
+          <i class="fa-brands fa-spotify"></i>
+          <span>Marco Tencati Corino</span>
+        </div>
+        
+        <div class="contact-item">
+          <i class="fa-brands fa-youtube"></i>
+          <span>/marcotencati</span>
+        </div>
+      </div>
+      
+      <div class="contact-note">
+        <i class="fa-regular fa-clock"></i>
+        <span>Response within 24h</span>
+      </div>
+    </div>
+    
+    <!-- Card Booking (75%) -->
+    <div class="booking-card">
+      <h2 class="booking-title">
+        <i class="fa-regular fa-calendar-check"></i>
+        Book me for events
+      </h2>
+      
+      <form id="bookingForm" class="booking-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">First name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          
+          <div class="form-group">
+            <label for="surname">Last name</label>
+            <input type="text" id="surname" name="surname" placeholder="Optional">
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+39 ...">
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Event date *</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="event-type">Event type</label>
+            <select id="event-type" name="event-type" class="form-select">
+              <option value="" disabled selected>Select type</option>
+              <option value="concert">Concert</option>
+              <option value="private">Private event</option>
+              <option value="studio">Studio session</option>
+              <option value="workshop">Workshop</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="notes">Special requests / Message</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Tell me about your event..."></textarea>
+        </div>
+        
+        <div class="form-footer">
+          <button type="submit" class="submit-btn">
+            Send request <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="band-footer">
+    <i class="fa-regular fa-star"></i> — Contacts & booking — 
+    <span class="booking-note">* Email or phone required</span>
+  </div>
+</section>
 
       <!-- Discografia -->
       <section class="page" id="discography">
